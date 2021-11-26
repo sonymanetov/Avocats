@@ -894,13 +894,19 @@ screen achievements():
                 hbox:
                     spacing 30
                     if persistent.achievements_dict[ach]["unlocked"]:
-                        image "/images/achievements/little_seed.png"
+                        image persistent.achievements_dict[ach]["icon"]
 
                         vbox:
                             yalign 0.5
                             text persistent.achievements_dict[ach]["title"]
                             text persistent.achievements_dict[ach]["text"]
-                    else:
+                    elif persistent.achievements_dict[ach]['type'] == 1 and persistent.achievements_dict[ach]["cur_prog"] > 0:
+                        image persistent.achievements_dict[ach]["icon"]
+
+                        vbox:
+                            yalign 0.5
+                            text "Концовок открыто: {0}/{1}".format(persistent.achievements_dict[ach]["cur_prog"], persistent.achievements_dict[ach]["max_prog"]) 
+                    else:    
                         image "/images/achievements/locked.png"
 
 
