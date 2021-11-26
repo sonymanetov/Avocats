@@ -53,6 +53,7 @@ label bio_branch:
     gizmo "Вроде бы я не так давно общался с Байтом, но, такое чувство, будто мы не виделись сотни Солнц."
 
     show gizmo shocked at left
+    with faster_dissolve
 
     gizmo "Байт! Привет! Подойди сюда!"
 
@@ -116,6 +117,7 @@ label bio_branch:
     "Пусть оно даже и не является больше частью меня..."
 
     scene black with fade
+    $ get_achievement("little_seed", trans=achievement_transform)
     centered "Что дальше? Зависит от меня."
 
     return
