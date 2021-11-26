@@ -143,7 +143,7 @@ label kutusha_branch:
     centered "Хочется верить, что туман и вправду расступился над нашей деревней. Жаль, я не смогу об этом узнать."
 
     scene clear_sky with fade
-
+    $ get_achievement("kutushas_adept", trans=achievement_transform)
     ""
 
     return

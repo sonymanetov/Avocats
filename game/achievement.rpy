@@ -94,10 +94,10 @@ init python:
                                                  "icon": "images/achievements/little_seed.png",
                                                  "unlocked": False
                                                 },
-                                        "palceholder_2": {"type": 0, 
-                                                 "title": "palceholder_2",
-                                                 "text": "palceholder_2",
-                                                 "icon": "images/achievements/palceholder_2.png",
+                                        "kutushas_adept": {"type": 0, 
+                                                 "title": "Адепт Кутуши",
+                                                 "text": "Пожертвуйте своим бренным телом ради ясного будущего ваших близких.",
+                                                 "icon": "images/achievements/kutushas_adept.png",
                                                  "unlocked": False
                                                 },
                                         "palceholder_3": {"type": 0, 
