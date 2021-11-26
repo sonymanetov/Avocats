@@ -370,17 +370,6 @@ screen main_menu():
     ## содержание главного меню находится на экране навигации.
     use navigation
 
-    if gui.show_name:
-
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -400,16 +389,6 @@ style main_menu_vbox:
     xmaximum 800
     yalign 1.0
     yoffset -20
-
-style main_menu_text:
-    properties gui.text_properties("main_menu", accent=True)
-
-style main_menu_title:
-    properties gui.text_properties("title")
-
-style main_menu_version:
-    properties gui.text_properties("version")
-
 
 ## Экран игрового меню #########################################################
 ##

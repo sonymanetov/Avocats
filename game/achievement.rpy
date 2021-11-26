@@ -113,16 +113,16 @@ init python:
                                                  "icon": "images/achievements/kutushas_adept.png",
                                                  "unlocked": False
                                                 },
-                                        "palceholder_3": {"type": 0, 
-                                                 "title": "palceholder_3",
-                                                 "text": "palceholder_3",
-                                                 "icon": "images/achievements/palceholder_3.png",
+                                        "smile_of_farewell": {"type": 0, 
+                                                 "title": "Улыбка прощанья",
+                                                 "text": "Примите и приласкайте собственную пустоту.",
+                                                 "icon": "images/achievements/smile_of_farewell.png",
                                                  "unlocked": False
                                                 },
                                         "all_endings": {"type": 1, 
                                                  "title": "Суперавакотик",
-                                                 "text": "Открыть все концовки",
-                                                 "icon": "images/achievements/kutushas_adept.png",
+                                                 "text": "Открыть все концовки.",
+                                                 "icon": "images/achievements/super_avocat.png",
                                                  "cur_prog": 0,
                                                  "max_prog": 3,
                                                  "unlocked": False
