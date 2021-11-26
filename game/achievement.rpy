@@ -86,10 +86,10 @@ init python:
 
     # Define your achievements here
     if not persistent.achievements_dict:
-        persistent.achievements_dict = {"test": {"type": 0, 
-                                                 "title": "dfdsf",
-                                                 "text": "test",
-                                                 "icon": "images/gizmo.png"
+        persistent.achievements_dict = {"little_seed": {"type": 0, 
+                                                 "title": "Что дальше?",
+                                                 "text": "Зависит от меня.",
+                                                 "icon": "images/achievements/little_seed.png"
                                                 }
                                         }
                                         
