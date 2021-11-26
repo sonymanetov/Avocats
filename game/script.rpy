@@ -187,6 +187,7 @@ label start:
     gizmo "Ты так говоришь, как будто бы у меня есть выбор."
 
     hide gizmo
+
     show reo at right
 
     reo "Как это? У тебя есть выбор - ты можешь пить, а можешь не пить настойку!"
@@ -225,5 +226,12 @@ label start:
             $ kutusha_points += 1
         "Мне снилось смазанное дерево и туман, больше я ничего не могу сказать.":
             pass
+
+    if bio_points > kutusha_points:
+        jump bio_branch
+    elif kutusha_points > bio_points:
+        jump kutusha_branch
+    else:
+        jump stranger_branch
 
     return
