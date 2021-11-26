@@ -13,8 +13,18 @@ init:
     $ stranger_points = 0
 
 
-# Вместо использования оператора image можете просто
-# складывать все ваши файлы изображений в папку images.
+# Reo
+image reo scared = "reo_scared.png"
+image reo shoked = "reo_shoked.png"
+
+# Gizmo
+image gizmo shoked = "gizmo_shoked.png"
+image gizmo scared = "gizmo_scared.png"
+image gizmo upset = "gizmo_upset.png"
+
+# Lorenzo
+image lorenzo shoked = "lorenzo_shoked.png"
+image lorenzo happy = "lorenzo_happy.png"
 
 # Игра начинается здесь:
 label start:
@@ -184,7 +194,7 @@ label start:
     "Я посмотрел на Лоренцо и впервые за всё время заметил на его лице улыбку."
 
     hide reo
-    show lorenzo_happy at right
+    show lorenzo happy at right
 
     lorenzo "Выпей и приляг, а мы пока подумаем, что можно сделать. Рео, пошли."
 
@@ -206,7 +216,11 @@ label start:
     lorenzo "Байт начал что-то втирать о химических экспериментах, кто-то сказал, чтобы мы с такими вопросами шли к Кутуше."
     lorenzo "А ты сам-то вообще, что думаешь? У тебя было достаточно времени, чтобы попытаться вспомнить произошедшее."
 
+<<<<<<< HEAD
     scene foggy_house
+=======
+    hide lorenzo
+>>>>>>> 4b06a29919988fb60edfc69629078095655ec683
 
     menu:
         "..." 
@@ -217,6 +231,9 @@ label start:
         "Мне снилось смазанное дерево и туман, больше я ничего не могу сказать.":
             pass
 
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> 4b06a29919988fb60edfc69629078095655ec683
     return
