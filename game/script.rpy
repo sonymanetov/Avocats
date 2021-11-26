@@ -165,7 +165,7 @@ label start:
 
     gizmo "Болит все тело..."
 
-    scene foggy_house
+    gide gizmo
 
     menu:
         "На что же похожа эта боль?" 
@@ -176,24 +176,23 @@ label start:
         "Мне сложно подобрать хорошее крепкое слово, Лоренцо.":
             $ stranger_points += 1
 
-    scene foggy_house
     show lorenzo at right
 
     lorenzo "Я не знаю, чем тебя лечить. Давай, ты выпьешь нашу универсальную настойку, вдруг поможет."
 
-    scene foggy_house
+    hide lorenzo
     show gizmo_upset at left
 
     gizmo "Ты так говоришь, как будто бы у меня есть выбор."
 
-    scene foggy_house
+    hide gizmo
     show reo at right
 
     reo "Как это? У тебя есть выбор - ты можешь пить, а можешь не пить настойку!"
 
     "Я посмотрел на Лоренцо и впервые за всё время заметил на его лице улыбку."
 
-    scene foggy_house
+    hide reo
     show lorenzo_happy at right
 
     lorenzo "Выпей и приляг, а мы пока подумаем, что можно сделать. Рео, пошли."
@@ -209,8 +208,7 @@ label start:
     show gizmo at left
     gizmo "Вам удалось что-либо выяснить? Вы так и не выронили ни слова."
 
-    scene foggy_house
-
+    hide gizmo
     show lorenzo at right 
 
     return
