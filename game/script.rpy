@@ -26,6 +26,8 @@ image gizmo upset = "gizmo_upset.png"
 image lorenzo shoked = "lorenzo_shoked.png"
 image lorenzo happy = "lorenzo_happy.png"
 
+define faster_dissolve = Dissolve(0.1)
+
 # Игра начинается здесь:
 label start:
 
@@ -35,7 +37,8 @@ label start:
 
     reo "Эй, братишка..."
 
-    show reo_scared at right
+    show reo scared at right
+    with faster_dissolve
 
     reo "Гизмо, ты меня слышишь?"
     reo "Мы искали тебя два солнца подряд! Прошу вставай..."
@@ -52,32 +55,34 @@ label start:
         "Молчаливо собраться с мыслями":
             pass                  
 
-    show reo_shoked at right
+    show reo shoked at right
+    with faster_dissolve
 
     reo "Т-т-ты... т-твоя..."
 
     "Рео смотрела на меня с ужасом, застывшим в её глазах. Я никогда не видел её такой напуганной"
 
-    scene start_background
+    hide reo
 
     "Плавно опустив глаза вниз я осознал ужасное..."
 
-    show gizmo_shoked at left
+    show gizmo shoked at left
 
     gizmo "Моя кость?! Где моя косточка?!"
     gizmo "Рео? Где мы?!"
 
-    show gizmo_scared at left
+    show gizmo scared at left
+    with faster_dissolve
 
     gizmo "Я ничего не понимаю, а еще ничего не помню!"
 
-    scene start_background 
+    hide gizmo
 
     "Я почувствовал боль и пустоту одновременно. Невыносимое ощущение диссонанса."
     "Рео всё также с ужасом и удивлением рассматривала меня"
 
-    show reo_shoked at right
-    with dissolve
+    show reo shoked at right
+    with faster_dissolve
 
     reo "Гизмо, братец, давай лучше уйдём отсюда. Надо быстрее найти остальных, они тоже тебя ищут."
 
@@ -88,14 +93,12 @@ label start:
     show reo at right
     reo "Лоренцо, я нашла его!"
 
-    scene foggy_avovillage
+    hide reo
 
-    show lorenzo at right
+    show lorenzo shoked at right
     lorenzo "Ну наконец-то, где ты был, Гизмо?"
 
-    show lorenzo_shoked at right
-
-    scene foggy_avovillage
+    hide lorenzo
 
     "Всё-таки он сумел разглядеть меня сквозь толщу тумана."
     "Молчит..."
@@ -109,25 +112,26 @@ label start:
             show lorenzo at right
             lorenzo "Я надеялся, ты сможешь дать ответ на этот вопрос... Но, похоже, ты и сам знаешь не больше, чем мы."
             
-    scene foggy_avovillage
+    hide lorenzo
 
-    show reo_shoked at right
+    show reo shoked at right
 
     reo "Я помню, что в тот день туман был особо наэлектризован, а небо висело почти над самой головой."
     reo "Я была в лесу, когда начался шторм. Когда я добежала до деревни, там были все, кроме тебя, Гизмо."
 
+    hide reo
     show lorenzo at right
 
     lorenzo "Да, мы решили, что опасно будет посылать кого-либо за тобой, поэтому просто ждали, пока погода утихомирится."
     lorenzo "На моей памяти ни разу не было ветров. Туман всегда стоял неподвижной липкой стеной, прямо как сейчас."
 
-    scene foggy_avovillage
+    hide lorenzo
 
-    show gizmo_upset at left
+    show gizmo upset at left
 
     gizmo "Ты когда-нибудь видел что-то подобное?"
 
-    scene foggy_avovillage
+    hide gizmo
 
     "Произнес я, указывая на углубление в своём животе."
     "Лоренцо лишь отрицательно покачал головой. Жаль."
@@ -137,7 +141,7 @@ label start:
     "Мы шли молча, лишь изредко Рео ловила мой взгляд и печально улыбалась мне."
     "С каждым шагом казалось, будто дыра во мне увеличивается, и живого от меня остается всё меньше и меньше."
 
-    show gizmo_upset at left
+    show gizmo upset at left
 
     menu:
         "Меня всю дорогу мучил вопрос..." 
@@ -161,8 +165,8 @@ label start:
     lorenzo "Так, давай осмотрим твое ранение, щербатый. Оно болит?"
     lorenzo "Хотя, дурацкий вопрос, по твоей морде видно, что болит. Лучше опиши, какая это боль?"
 
-    scene foggy_house
-    show gizmo_upset at left
+    hide lorenzo
+    show gizmo upset at left
 
     gizmo "Болит все тело..."
 
@@ -182,7 +186,7 @@ label start:
     lorenzo "Я не знаю, чем тебя лечить. Давай, ты выпьешь нашу универсальную настойку, вдруг поможет."
 
     hide lorenzo
-    show gizmo_upset at left
+    show gizmo upset at left
 
     gizmo "Ты так говоришь, как будто бы у меня есть выбор."
 
