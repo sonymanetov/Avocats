@@ -370,17 +370,6 @@ screen main_menu():
     ## содержание главного меню находится на экране навигации.
     use navigation
 
-    if gui.show_name:
-
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -400,16 +389,6 @@ style main_menu_vbox:
     xmaximum 800
     yalign 1.0
     yoffset -20
-
-style main_menu_text:
-    properties gui.text_properties("main_menu", accent=True)
-
-style main_menu_title:
-    properties gui.text_properties("title")
-
-style main_menu_version:
-    properties gui.text_properties("version")
-
 
 ## Экран игрового меню #########################################################
 ##
@@ -894,13 +873,19 @@ screen achievements():
                 hbox:
                     spacing 30
                     if persistent.achievements_dict[ach]["unlocked"]:
-                        image "/images/achievements/little_seed.png"
+                        image persistent.achievements_dict[ach]["icon"]
 
                         vbox:
                             yalign 0.5
                             text persistent.achievements_dict[ach]["title"]
                             text persistent.achievements_dict[ach]["text"]
-                    else:
+                    elif persistent.achievements_dict[ach]['type'] == 1 and persistent.achievements_dict[ach]["cur_prog"] > 0:
+                        image persistent.achievements_dict[ach]["icon"]
+
+                        vbox:
+                            yalign 0.5
+                            text "Концовок открыто: {0}/{1}".format(persistent.achievements_dict[ach]["cur_prog"], persistent.achievements_dict[ach]["max_prog"]) 
+                    else:    
                         image "/images/achievements/locked.png"
 
 

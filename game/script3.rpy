@@ -43,6 +43,7 @@ label kutusha_branch:
     reo "Лоренцо! Следи за языком, это так грубо!"
 
     show reo at right
+    with faster_dissolve
 
     reo "Если ты хочешь пойти к Кутуше, то я могу отправиться с тобой, Гизмо!"
 
@@ -64,6 +65,7 @@ label kutusha_branch:
     reo "Гизмо, должно быть мы на месте..."
     
     show reo shoked at right
+    with faster_dissolve
 
     reo "ШТУША-КУТУША-СТРАШНЫЙ-ЗВЕРЬ, ВЫХОДИ!!!!!"
 

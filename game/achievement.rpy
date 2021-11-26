@@ -6,6 +6,15 @@ transform achievement_transform:
     on hide:
         linear 0.4 xalign 1.9 yalign .02
 
+transform update_achievement_transform:
+    on show:
+        xalign .98 
+        yalign -.3 
+        linear 0.4 xalign .98 yalign .20
+    on hide:
+        linear 0.4 xalign 1.9 yalign .20
+
+
 screen scr_achievement_get(title, a_text, icon, trans=achievement_transform):
     timer 2.4 action Hide("scr_achievement_get")
     window:
@@ -28,7 +37,7 @@ screen scr_achievement_get(title, a_text, icon, trans=achievement_transform):
                     size 22
                     id a_text
 
-screen scr_achievement_update(title, a_text, icon, cur_prog, max_prog, trans=achievement_transform):
+screen scr_achievement_update(title, a_text, icon, cur_prog, max_prog, trans=update_achievement_transform):
     timer 2.4 action Hide("scr_achievement_update")
     window:
         at trans
@@ -69,8 +78,9 @@ init python:
             ach["unlocked"] = True
             renpy.show_screen(_screen_name='scr_achievement_get', title=ach['title'],
                               a_text=ach['text'], icon=ach['icon'], trans=trans)
+            update_achievement("all_endings")
 
-    def update_achievement(ach_id, to_add=1, trans=achievement_transform):
+    def update_achievement(ach_id, to_add=1, trans=update_achievement_transform):
         persistent.achievements_dict[ach_id]["cur_prog"] += to_add
         ach = persistent.achievements_dict[ach_id]
 
@@ -78,6 +88,9 @@ init python:
         if ach['cur_prog'] > ach['max_prog']:
             persistent.achievements_dict[ach_id]["cur_prog"] = ach['max_prog']
             ach = persistent.achievements_dict[ach_id]
+
+        if ach['cur_prog'] == ach['max_prog']:
+            ach["unlocked"] = True
 
         renpy.show_screen(_screen_name='scr_achievement_update', title=ach['title'], a_text=ach['text'],
                           icon=ach['icon'], cur_prog=ach['cur_prog'], max_prog=ach['max_prog'], trans=trans)
@@ -100,10 +113,18 @@ init python:
                                                  "icon": "images/achievements/kutushas_adept.png",
                                                  "unlocked": False
                                                 },
-                                        "palceholder_3": {"type": 0, 
-                                                 "title": "palceholder_3",
-                                                 "text": "palceholder_3",
-                                                 "icon": "images/achievements/palceholder_3.png",
+                                        "smile_of_farewell": {"type": 0, 
+                                                 "title": "Улыбка прощанья",
+                                                 "text": "Примите и приласкайте собственную пустоту.",
+                                                 "icon": "images/achievements/smile_of_farewell.png",
+                                                 "unlocked": False
+                                                },
+                                        "all_endings": {"type": 1, 
+                                                 "title": "Суперавакотик",
+                                                 "text": "Открыть все концовки.",
+                                                 "icon": "images/achievements/super_avocat.png",
+                                                 "cur_prog": 0,
+                                                 "max_prog": 3,
                                                  "unlocked": False
                                                 }
                                         }
