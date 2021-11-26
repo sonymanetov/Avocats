@@ -165,7 +165,7 @@ label start:
 
     gizmo "Болит все тело..."
 
-    gide gizmo
+    hide gizmo
 
     menu:
         "На что же похожа эта боль?" 
