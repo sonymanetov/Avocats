@@ -313,6 +313,8 @@ screen navigation():
 
         textbutton _("Настройки") action ShowMenu("preferences")
 
+        textbutton _("Достижения") action ShowMenu("achievements")
+
         if _in_replay:
 
             textbutton _("Завершить повтор") action EndReplay(confirm=True)
@@ -562,6 +564,10 @@ screen about():
             ## gui.about обычно установлено в options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
+
+            text _("Проект на {a=https://vinatorul.itch.io/}Itch.io{/a}")
+
+            text _("Исходники на {a=https://github.com/sonymanetov/Avocats}github{/a}")
 
             text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
@@ -868,6 +874,34 @@ style slider_button_text:
 
 style slider_vbox:
     xsize 450
+
+
+## Экран достижений ###############################################################
+##
+## Этот экран показывает игроку список достижений
+##
+
+screen achievements():
+
+    tag menu
+
+    use game_menu(_("Достижения"), scroll="viewport"):
+
+        vbox:
+            spacing 15
+            
+            for ach in persistent.achievements_dict:
+                hbox:
+                    spacing 30
+                    if persistent.achievements_dict[ach]["unlocked"]:
+                        image "/images/achievements/little_seed.png"
+
+                        vbox:
+                            yalign 0.5
+                            text persistent.achievements_dict[ach]["title"]
+                            text persistent.achievements_dict[ach]["text"]
+                    else:
+                        image "/images/achievements/locked.png"
 
 
 ## Экран истории ###############################################################

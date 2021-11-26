@@ -64,9 +64,11 @@ screen scr_achievement_update(title, a_text, icon, cur_prog, max_prog, trans=ach
 init python:
     def get_achievement(ach_id, trans=achievement_transform):
         ach = persistent.achievements_dict[ach_id]
-        achievement.grant(ach_id)
-        renpy.show_screen(_screen_name='scr_achievement_get', title=ach['title'],
-                          a_text=ach['text'], icon=ach['icon'], trans=trans)
+        if ach["unlocked"] is False:
+            achievement.grant(ach_id)
+            ach["unlocked"] = True
+            renpy.show_screen(_screen_name='scr_achievement_get', title=ach['title'],
+                              a_text=ach['text'], icon=ach['icon'], trans=trans)
 
     def update_achievement(ach_id, to_add=1, trans=achievement_transform):
         persistent.achievements_dict[ach_id]["cur_prog"] += to_add
@@ -86,10 +88,23 @@ init python:
 
     # Define your achievements here
     if not persistent.achievements_dict:
-        persistent.achievements_dict = {"test": {"type": 0, 
-                                                 "title": "dfdsf",
-                                                 "text": "test",
-                                                 "icon": "images/gizmo.png"
+        persistent.achievements_dict = {"little_seed": {"type": 0, 
+                                                 "title": "Что дальше?",
+                                                 "text": "Зависит от меня.",
+                                                 "icon": "images/achievements/little_seed.png",
+                                                 "unlocked": False
+                                                },
+                                        "palceholder_2": {"type": 0, 
+                                                 "title": "palceholder_2",
+                                                 "text": "palceholder_2",
+                                                 "icon": "images/achievements/palceholder_2.png",
+                                                 "unlocked": False
+                                                },
+                                        "palceholder_3": {"type": 0, 
+                                                 "title": "palceholder_3",
+                                                 "text": "palceholder_3",
+                                                 "icon": "images/achievements/palceholder_3.png",
+                                                 "unlocked": False
                                                 }
                                         }
                                         
