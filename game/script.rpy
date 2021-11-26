@@ -24,6 +24,7 @@ image gizmo upset = "gizmo_upset.png"
 
 # Lorenzo
 image lorenzo shoked = "lorenzo_shoked.png"
+image lorenzo happy = "lorenzo_happy.png"
 
 # Игра начинается здесь:
 label start:
@@ -193,7 +194,7 @@ label start:
     "Я посмотрел на Лоренцо и впервые за всё время заметил на его лице улыбку."
 
     hide reo
-    show lorenzo_happy at right
+    show lorenzo happy at right
 
     lorenzo "Выпей и приляг, а мы пока подумаем, что можно сделать. Рео, пошли."
 
