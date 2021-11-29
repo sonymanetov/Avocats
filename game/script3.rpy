@@ -9,11 +9,6 @@ init:
     define lorenzo = Character('Лоренцо', color="#eeeeee")
     define kutusha = Character('Кутуша', color="#eeeeee")
 
-    $ bio_points = 0
-    $ kutusha_points = 0
-    $ stranger_points = 0
-
-
 # Reo
 image reo scared = "reo_scared.png"
 image reo shoked = "reo_shoked.png"
@@ -32,6 +27,16 @@ label kutusha_branch:
 
     scene foggy_house
 
+    "Я всеми силами пытался сосредоточиться на своих ощущениях, но в голове гудело лишь одно слово - Кутуша"
+
+    show gizmo 
+    
+    gizmo "Я, пожалуй, рискну и..."
+
+    hide gizmo
+
+    "Меня резко прервали."
+
     show lorenzo shoked at right
 
     lorenzo "Ты серьезно хочешь иметь дело с Кутушей? У тебя вместе с костью мозги выпали?"
@@ -43,7 +48,6 @@ label kutusha_branch:
     reo "Лоренцо! Следи за языком, это так грубо!"
 
     show reo at right
-    with faster_dissolve
 
     reo "Если ты хочешь пойти к Кутуше, то я могу отправиться с тобой, Гизмо!"
 
@@ -65,7 +69,6 @@ label kutusha_branch:
     reo "Гизмо, должно быть мы на месте..."
     
     show reo shoked at right
-    with faster_dissolve
 
     reo "ШТУША-КУТУША-СТРАШНЫЙ-ЗВЕРЬ, ВЫХОДИ!!!!!"
 
@@ -83,7 +86,7 @@ label kutusha_branch:
 
     show gizmo upset at left
 
-    gizmo "Госпожа, Кутуша, до меня дошла весть, что вы знаете ответы на многие вопросы..."
+    gizmo "Госпожа Кутуша, до меня дошла весть, что вы знаете ответы на многие вопросы..."
 
     hide gizmo
 
@@ -145,7 +148,7 @@ label kutusha_branch:
     centered "Хочется верить, что туман и вправду расступился над нашей деревней. Жаль, я не смогу об этом узнать."
 
     scene clear_sky with fade
-    $ get_achievement("kutushas_adept", trans=achievement_transform)
+
     ""
 
     return

@@ -212,7 +212,7 @@ label start:
     scene foggy_house
 
     show gizmo at left
-    gizmo "Вам удалось что-либо выяснить? Вы так и не выронили ни слова."
+    gizmo "Вам удалось что-либо выяснить? Вы так и не проронили ни слова."
 
     hide gizmo
     show lorenzo at right 
