@@ -66,9 +66,12 @@ label kutusha_branch:
 
     show reo at right
 
+
     reo "Гизмо, должно быть мы на месте..."
     
     show reo shoked at right
+
+    with faster_dissolve
 
     reo "ШТУША-КУТУША-СТРАШНЫЙ-ЗВЕРЬ, ВЫХОДИ!!!!!"
 
@@ -149,6 +152,7 @@ label kutusha_branch:
 
     scene clear_sky with fade
 
+    $ get_achievement("kutushas_adept", trans=achievement_transform)
     ""
 
     return
